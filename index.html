@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <title>Cursor</title>
+    </head>
+    <body>
+        <h4>Cursor Animation</h4>
+        <!--create the cursor div-->
+        <div class="cursor"></div>
+
+        <!--the functionality-->
+        <script>
+            // Cursor animation
+      const cursor = document.querySelector('.cursor');
+      // pageY returns the position of the cursor on the page
+      document.addEventListener('mousemove', e => {
+          cursor.setAttribute("style","top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+      })
+      document.addEventListener('click', () => {
+          cursor.classList.add("expand");
+      
+          setTimeout(()=> {
+              cursor.classList.remove("expand");
+          },500)
+      })
+        </script>
+    </body>
+</html>
